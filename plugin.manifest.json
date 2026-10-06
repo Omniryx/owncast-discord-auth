@@ -1,0 +1,43 @@
+{
+  "api": "1",
+  "name": "Discord Auth",
+  "slug": "discord-auth",
+  "version": "0.1.0",
+  "description": "Require viewers to sign in with Discord. Chat uses their Discord name and avatar.",
+  "category": "authentication",
+  "permissions": [
+    "auth.gate",
+    "users.register",
+    "http.serve",
+    "network.fetch",
+    "storage.kv",
+    "storage.sql",
+    "ui.modify"
+  ],
+  "network": {
+    "allowedHosts": ["discord.com"]
+  },
+  "config": {
+    "clientId": {
+      "type": "string",
+      "default": "",
+      "description": "Discord application Client ID"
+    },
+    "clientSecret": {
+      "type": "string",
+      "default": "",
+      "description": "Discord application Client Secret"
+    },
+    "publicUrl": {
+      "type": "string",
+      "default": "",
+      "description": "Public https URL of this Owncast server, no trailing slash (e.g. https://stream.example.com)"
+    },
+    "sessionHours": {
+      "type": "number",
+      "default": 168,
+      "description": "How long a Discord login lasts, in hours"
+    }
+  },
+  "scripts": ["client.js"]
+}
